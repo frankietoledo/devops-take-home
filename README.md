@@ -22,7 +22,7 @@ The steps to follow are:
 
 ## Deliverables
 
-- `Production application working`, so, we want to have a real demo, like having an user in Linear / Github to see how it works. You can add a loom too.
+- `Production application working`, so, we want to have a real demo, like having an user in Linear / Github to see how it works. You can add a [Loom](https://loom.com/)  too.
 - The backend and the infrastructure code, ideally `Terraform` or `CDK` with `AWS`
 - In the project, a `Readme.md` explaining the decistion that you take
 - The source code of the service in private repository, add the user @skaznowiecki / @sebastian-alvarez-fuse-finance / @danielruizr / @felipe-machado as a collaborator
@@ -31,6 +31,6 @@ The steps to follow are:
 
 - The application working as expect ( live ).
 - The infrastructure as code
-- The architecture decistions
+- The architecture decisions
 
 - - We're not going to pay too much attention to the architecture of the backend service ( like DDD or Hexagonal architecture ) , the most important things are the 3 items mentioned before.
