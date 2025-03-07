@@ -1,6 +1,6 @@
 # Fuse take home
 
-The goal of this take home is to create a `production ready product` to improve the Fuse team performance on a certain group of task using cool stuck like LLMs / Agents / integrations.
+The goal of this take home is to create a `production ready product` to improve the Fuse team performance on a certain group of task using cool stuffs like LLMs / Agents / integrations.
 
 This is the repository of the React application: [React App] (https://github.com/FuseFinance/react-ai-agent) where it has the code to render the table from the json file. You need to create an AI Agent which will be able to add/update ( never delete ) information to that json file from a [Linear task] (https://linear.app).
 
