@@ -25,7 +25,7 @@ The steps to follow are:
 - `Production application working`, so, we want to have a real demo, like having an user in Linear / Github to see how it works. You can add a [Loom](https://loom.com/)  too.
 - The backend and the infrastructure code, ideally `Terraform` or `CDK` with `AWS`
 - In the project, a `Readme.md` explaining the decistion that you take
-- The source code of the service in private repository, add the user @skaznowiecki / @sebastian-alvarez-fuse-finance / @danielruizr / @felipe-machado as a collaborator
+- The source code of the service in private repository, add the user @skaznowiecki / @JesusPaz as a collaborator
 
 ## Evaluation
 
