@@ -19,6 +19,7 @@ The steps to follow are:
 ### Important notes
 
 - Fork the React App in your github account to be able to use it programmatically
+- If you have enough time, we’d love for you to integrate Auth0 into the React app adding a login to protect it. It’s optional, but it’ll earn you extra points.
 
 ## Deliverables
 
@@ -26,6 +27,7 @@ The steps to follow are:
 - The backend and the infrastructure code, ideally `Terraform` or `CDK` with `AWS`
 - In the project, a `Readme.md` explaining the decistion that you take
 - The source code of the service in private repository, add the user @skaznowiecki / @JesusPaz as a collaborator
+- Please provide a test username and password for logging in when Auth0 is enabled.
 
 ## Evaluation
 
