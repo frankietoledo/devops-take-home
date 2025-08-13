@@ -1,0 +1,5 @@
+notas.md
+*.pub
+*.pem
+*.hcl
+.terraform
