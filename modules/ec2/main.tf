@@ -67,29 +67,30 @@ data "aws_ami" "amazon_linux_2023" {
 
 resource "aws_instance" "app_server" {
   ami                    = data.aws_ami.amazon_linux_2023.id
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   key_name               = aws_key_pair.generated_key.key_name
 
+  root_block_device {
+    volume_size = 30
+  }
+
 user_data = <<-EOF
               #!/bin/bash
-              # Actualiza los paquetes del sistema
               sudo dnf update -y
               
-              # Cambia el puerto de SSH a 4022
               sudo sed -i 's/#Port 22/Port 4022/g' /etc/ssh/sshd_config
               sudo systemctl restart sshd
 
-              # Instala Docker y Docker Compose
               sudo dnf install docker -y
               sudo systemctl enable docker --now
               sudo usermod -a -G docker ec2-user
               
-              # Docker Compose viene como un plugin de Docker en AL2023
-              sudo dnf install docker-compose-plugin -y
 
-              # Instala Node.js 18 (disponible en los repositorios por defecto de AL2023)
+              sudo curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o /usr/libexec/docker/cli-plugins/docker-compose              
+              sudo chmod +x /usr/libexec/docker/cli-plugins/docker-compose
+
               sudo dnf install nodejs -y
               
               # Crea la aplicación de ejemplo
@@ -117,11 +118,9 @@ user_data = <<-EOF
               server.listen(3000, '0.0.0.0', () => console.log('Server running on port 3000'));
               EOT
               
-              # Instala PM2 para mantener la app corriendo
               sudo npm install pm2 -g
               sudo chown -R ec2-user:ec2-user /home/ec2-user/app
               
-              # Ejecuta la app como el usuario 'ec2-user'
               runuser -l ec2-user -c 'pm2 start /home/ec2-user/app/index.js'
               EOF
   tags = {
